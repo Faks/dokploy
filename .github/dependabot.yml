@@ -1,0 +1,17 @@
+version: 2
+updates:
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 10
+    labels:
+      - "dependencies"
+    # Only allow security updates
+    allow:
+      - dependency-type: "direct"
+    # Auto-merge enabled
+    automerged-updates:
+      ignore:
+        - dependency-name: "*"
+          update-types: ["version-update:semver-major"]
